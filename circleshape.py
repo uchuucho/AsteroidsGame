@@ -17,3 +17,9 @@ class CircleShape(pygame.sprite.Sprite):
     
     def update(self, dt):
           pass
+    
+    # Detecting collision between player and asteroids
+    def is_colliding(self,shape):
+          if self.position.distance_to(shape.position) <= self.radius + shape.radius:
+                return True
+          return False

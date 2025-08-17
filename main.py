@@ -31,9 +31,15 @@ def main():
         for d in drawable:
             d.draw(screen)
         updatable.update(dt)
+        for a in asteroids:
+            # Exiting the game when player collides with asteroids
+            if a.is_colliding(player):
+                print("Game over!")
+                pygame.quit()
+                return
         # Refreshing the screen
         pygame.display.flip()
-        #restricting fps to 60
+        # Restricting fps to 60
         dt = (clock.tick(60)/1000)
         
 
