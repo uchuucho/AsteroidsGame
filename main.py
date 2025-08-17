@@ -4,6 +4,8 @@ from constants import *
 def main():
     # Initliazing pygame
     pygame.init()
+    clock = pygame.time.Clock()
+    dt = 0
     # Getting new GUI 
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     # Game loop
@@ -16,6 +18,9 @@ def main():
         screen.fill((0,0,0))
         # Refreshing the screen
         pygame.display.flip()
+        #restricting fps to 60
+        dt = (clock.tick(60)/1000)
+
 
 
 if __name__ == "__main__":
