@@ -44,7 +44,7 @@ def main():
             for s in shots:
                 if s.is_colliding(a):
                     s.kill()
-                    a.kill()
+                    a.split()
         
         # Refreshing the screen
         pygame.display.flip()
